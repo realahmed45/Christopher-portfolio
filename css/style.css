@@ -1615,3 +1615,252 @@ button:focus,
 a:focus {
     outline: 2px solid rgba(0, 113, 227, 0.5);
 }
+
+/* ==========================================
+   ABOUT PAGE PROPER STYLING
+   ========================================== */
+
+/* About Page Sections */
+.about-page-section {
+    padding: 4rem 0 6rem;
+    background: #ffffff;
+}
+
+.about-content-detailed {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* About Intro Paragraph */
+.about-intro {
+    font-size: 1.35rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(0, 113, 227, 0.03) 0%, transparent 100%);
+    border-left: 4px solid #0071e3;
+    border-radius: 8px;
+}
+
+/* Subsection Titles */
+.subsection-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #000;
+    margin: 3rem 0 1.5rem;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.subsection-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #0071e3, #06c);
+    border-radius: 2px;
+}
+
+/* About Text */
+.about-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+/* Skills List */
+.skills-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+.skills-list li {
+    padding: 0.875rem 0;
+    padding-left: 2rem;
+    position: relative;
+    font-size: 1.05rem;
+    color: #2c3e50;
+    line-height: 1.6;
+    transition: all 0.3s ease;
+}
+
+.skills-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #0071e3;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.skills-list li:hover {
+    color: #0071e3;
+    transform: translateX(8px);
+}
+
+/* Education Grid */
+.education-grid {
+    display: grid;
+    gap: 2rem;
+    margin: 2rem 0 3rem;
+}
+
+.education-item {
+    padding: 2rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    border-radius: 12px;
+    border-left: 4px solid #0071e3;
+    transition: all 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 20px rgba(0, 113, 227, 0.1);
+}
+
+.education-degree {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 0.5rem;
+}
+
+.education-school {
+    font-size: 1.05rem;
+    color: #2c3e50;
+    margin: 0 0 0.5rem;
+}
+
+.education-date {
+    font-size: 0.95rem;
+    color: #666;
+    font-style: italic;
+    margin: 0;
+}
+
+/* CTA Section */
+.cta-section {
+    margin-top: 4rem;
+    padding: 3rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 16px;
+    text-align: center;
+}
+
+.cta-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 1rem;
+}
+
+.cta-text {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin: 0 0 2rem;
+}
+
+.about-cta-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.about-cta-buttons .cta-primary,
+.about-cta-buttons .cta-secondary {
+    padding: 1rem 2.5rem;
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-page-section {
+        padding: 3rem 0 4rem;
+    }
+    
+    .about-intro {
+        font-size: 1.15rem;
+        padding: 1.5rem;
+    }
+    
+    .subsection-title {
+        font-size: 1.5rem;
+    }
+    
+    .about-text {
+        font-size: 1rem;
+    }
+    
+    .education-item {
+        padding: 1.5rem;
+    }
+    
+    .cta-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .about-cta-buttons {
+        flex-direction: column;
+    }
+}
+
+/* ==========================================
+   FORCE CENTER ALIGNMENT FOR ABOUT PAGE
+   ========================================== */
+
+.container-narrow {
+    max-width: 800px;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+    width: 100% !important;
+}
+
+.about-content-detailed {
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    text-align: left !important;
+}
+
+.page-hero .container {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 2rem !important;
+    text-align: center !important;
+}
+
+.about-page-section {
+    width: 100% !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.about-page-section .container-narrow {
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Fix any left alignment issues */
+body {
+    overflow-x: hidden !important;
+}
+
+.nav-container,
+.container,
+.container-narrow {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+@media (max-width: 768px) {
+    .container-narrow {
+        padding: 0 1.5rem !important;
+    }
+}
