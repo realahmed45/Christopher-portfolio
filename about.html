@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <style>
-        /* Enhanced Animations for About Page */
+        /* Enhanced Classy Animations */
         .page-hero {
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
         }
         
         .page-hero::before {
@@ -20,27 +21,29 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(0, 113, 227, 0.1) 0%, transparent 70%);
-            animation: heroGlow 8s ease-in-out infinite;
+            background: radial-gradient(circle, rgba(0, 113, 227, 0.08) 0%, transparent 70%);
+            animation: heroGlow 12s ease-in-out infinite;
         }
         
         @keyframes heroGlow {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(10%, 10%) scale(1.1); }
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+            50% { transform: translate(8%, 8%) scale(1.05); opacity: 0.8; }
         }
         
         .page-title {
-            animation: slideInDown 0.8s ease-out;
+            animation: elegantSlideIn 1s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: -0.02em;
         }
         
         .page-subtitle {
-            animation: fadeInUp 1s ease-out 0.3s both;
+            animation: fadeInUp 1.2s ease-out 0.3s both;
+            opacity: 0.9;
         }
         
-        @keyframes slideInDown {
+        @keyframes elegantSlideIn {
             from {
                 opacity: 0;
-                transform: translateY(-50px);
+                transform: translateY(-40px);
             }
             to {
                 opacity: 1;
@@ -51,7 +54,7 @@
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(30px);
+                transform: translateY(25px);
             }
             to {
                 opacity: 1;
@@ -60,7 +63,7 @@
         }
         
         .about-content-detailed > * {
-            animation: fadeInUp 0.8s ease-out both;
+            animation: fadeInUp 0.9s ease-out both;
         }
         
         .about-content-detailed > *:nth-child(1) { animation-delay: 0.1s; }
@@ -71,24 +74,26 @@
         .about-content-detailed > *:nth-child(6) { animation-delay: 0.6s; }
         .about-content-detailed > *:nth-child(7) { animation-delay: 0.7s; }
         .about-content-detailed > *:nth-child(8) { animation-delay: 0.8s; }
+        .about-content-detailed > *:nth-child(9) { animation-delay: 0.9s; }
+        .about-content-detailed > *:nth-child(10) { animation-delay: 1s; }
         
         .skills-list li {
-            animation: slideInLeft 0.5s ease-out both;
-            position: relative;
+            animation: slideInLeft 0.6s ease-out both;
+            transition: all 0.3s ease;
         }
         
         .skills-list li:nth-child(1) { animation-delay: 0.1s; }
-        .skills-list li:nth-child(2) { animation-delay: 0.2s; }
-        .skills-list li:nth-child(3) { animation-delay: 0.3s; }
-        .skills-list li:nth-child(4) { animation-delay: 0.4s; }
-        .skills-list li:nth-child(5) { animation-delay: 0.5s; }
-        .skills-list li:nth-child(6) { animation-delay: 0.6s; }
-        .skills-list li:nth-child(7) { animation-delay: 0.7s; }
+        .skills-list li:nth-child(2) { animation-delay: 0.15s; }
+        .skills-list li:nth-child(3) { animation-delay: 0.2s; }
+        .skills-list li:nth-child(4) { animation-delay: 0.25s; }
+        .skills-list li:nth-child(5) { animation-delay: 0.3s; }
+        .skills-list li:nth-child(6) { animation-delay: 0.35s; }
+        .skills-list li:nth-child(7) { animation-delay: 0.4s; }
         
         @keyframes slideInLeft {
             from {
                 opacity: 0;
-                transform: translateX(-30px);
+                transform: translateX(-20px);
             }
             to {
                 opacity: 1;
@@ -96,47 +101,21 @@
             }
         }
         
-        .skills-list li::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #0071e3, #06c);
-            transition: width 0.6s ease;
-        }
-        
-        .skills-list li:hover::after {
-            width: 100%;
+        .skills-list li:hover {
+            transform: translateX(8px);
+            color: #0071e3;
         }
         
         .cta-section {
-            animation: scaleIn 0.8s ease-out 1s both;
+            animation: scaleIn 1s ease-out 1s both;
             position: relative;
             overflow: hidden;
-        }
-        
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0, 113, 227, 0.05) 0%, transparent 70%);
-            animation: ctaPulse 6s ease-in-out infinite;
-        }
-        
-        @keyframes ctaPulse {
-            0%, 100% { transform: scale(1); opacity: 0.5; }
-            50% { transform: scale(1.2); opacity: 0.8; }
         }
         
         @keyframes scaleIn {
             from {
                 opacity: 0;
-                transform: scale(0.95);
+                transform: scale(0.96);
             }
             to {
                 opacity: 1;
@@ -149,71 +128,62 @@
         }
         
         .about-cta-buttons a:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 40px rgba(0, 113, 227, 0.4);
+            transform: translateY(-4px) scale(1.03);
+            box-shadow: 0 12px 35px rgba(0, 113, 227, 0.35);
         }
         
         .subsection-title {
             position: relative;
             display: inline-block;
+            margin-bottom: 1.5rem;
         }
         
         .subsection-title::after {
             content: '';
             position: absolute;
-            bottom: -8px;
+            bottom: -10px;
             left: 0;
-            width: 60px;
-            height: 4px;
+            width: 50px;
+            height: 3px;
             background: linear-gradient(90deg, #0071e3, #06c);
             border-radius: 2px;
-            animation: expandLine 0.8s ease-out;
-        }
-        
-        @keyframes expandLine {
-            from {
-                width: 0;
-            }
-            to {
-                width: 60px;
-            }
         }
         
         .about-text-large {
-            position: relative;
-            padding-left: 20px;
-            border-left: 4px solid #0071e3;
-            background: linear-gradient(90deg, rgba(0, 113, 227, 0.05) 0%, transparent 100%);
-            padding: 1.5rem 1.5rem 1.5rem 2rem;
-            border-radius: 8px;
-            transition: all 0.3s ease;
+            line-height: 1.9;
+            padding: 2rem;
+            background: linear-gradient(135deg, rgba(0, 113, 227, 0.03) 0%, transparent 100%);
+            border-radius: 12px;
+            border-left: 3px solid #0071e3;
+            transition: all 0.4s ease;
         }
         
         .about-text-large:hover {
+            background: linear-gradient(135deg, rgba(0, 113, 227, 0.06) 0%, transparent 100%);
+            transform: translateX(4px);
             border-left-color: #06c;
-            background: linear-gradient(90deg, rgba(0, 113, 227, 0.08) 0%, transparent 100%);
+        }
+        
+        .education-item {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border-left: 3px solid #0071e3;
+            transition: all 0.3s ease;
+        }
+        
+        .education-item:hover {
+            background: #f0f3f6;
             transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
         
-        /* Floating animation for hero background */
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-        
-        /* Add shimmer effect to section titles */
         .section-title {
-            background: linear-gradient(90deg, #000 0%, #0071e3 50%, #000 100%);
-            background-size: 200% 100%;
+            background: linear-gradient(135deg, #000 0%, #0071e3 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            animation: shimmer 3s ease-in-out infinite;
-        }
-        
-        @keyframes shimmer {
-            0% { background-position: -100% 0; }
-            100% { background-position: 200% 0; }
         }
     </style>
 </head>
@@ -232,7 +202,7 @@
     <section class="page-hero">
         <div class="container">
             <h1 class="page-title">About Me</h1>
-            <p class="page-subtitle">Product Designer • UC Davis Student • Creative Problem Solver</p>
+            <p class="page-subtitle">UI/UX & Product Designer • UC Davis Student • Design Thinker</p>
         </div>
     </section>
 
@@ -240,18 +210,17 @@
         <div class="container-narrow">
             <div class="about-content-detailed">
                 <h2 class="section-title">Hello, I'm Christopher</h2>
-                <p class="about-text-large">I'm a Product Design student at UC Davis with a passion for creating meaningful digital experiences that balance aesthetics with functionality. Currently, I work as a Marketing and Communications Specialist at UC Davis' Graduate School of Management and as an AI Generalist with the MOVE AI Fellowship.</p>
+                <p class="about-text-large">I'm a UI/UX and Product Design student at the University of California, Davis. I enjoy turning complex ideas into designs people can actually use.</p>
                 
                 <h3 class="subsection-title">What I Do</h3>
-                <p class="about-text">My work spans digital content management, visual brand design, social media design, and UX/UI. I've collaborated with organizations including UC Davis GSM, Child Survival Aid Ghana, FilAm ARTS, and Un/Do Mindset to deliver impactful design solutions.</p>
+                <p class="about-text">I currently work as a Marketing and Communications Specialist at UC Davis' Graduate School of Management. In this role, I manage web content, design digital assets, and build HTML email campaigns with cross-functional teams.</p>
                 
-                <p class="about-text">At UC Davis GSM, I manage web content updates, create digital materials for recruitment and engagement, and build HTML email campaigns. I design graphics for social, web, and print channels while collaborating with cross-functional teams including Admissions, Alumni, and Corporate Relations.</p>
+                <p class="about-text">Outside of class, I work on contract with Handshake's MOVE AI Fellowship. I review multimodal AI outputs and apply design principles to evaluate AI-generated branding and UX work. My experience also includes visual branding for nonprofits such as Child Survival Aid Ghana and The Association for the Advancement of Filipino American Arts and Culture. I have designed social media content for mental health advocacy with Un/Do Mindset and contributed to marketing campaigns for educational institutions.</p>
 
                 <h3 class="subsection-title">My Approach</h3>
-                <p class="about-text">I believe great design emerges from understanding both user needs and business objectives. My process centers on strategic thinking, accessibility, and human-centered design principles. I blend analytical thinking with creative problem-solving to craft experiences that are both visually compelling and functionally excellent.</p>
+                <p class="about-text">I design with structure in mind without letting it limit creativity. Accessibility and clarity guide my decisions. I focus on creating work that feels purposeful, easy to use, and visually straightforward.</p>
 
                 <h3 class="subsection-title">Experience & Skills</h3>
-                <p class="about-text">Through my volunteer work with nonprofits and professional roles in marketing and AI evaluation, I've developed expertise in:</p>
                 <ul class="skills-list">
                     <li>UI/UX Design & Human-Centered Design</li>
                     <li>Brand Strategy & Visual Identity Systems</li>
@@ -263,11 +232,19 @@
                 </ul>
 
                 <h3 class="subsection-title">Education</h3>
-                <p class="about-text"><strong>Bachelor of Design</strong> (2025-2027)<br>University of California, Davis</p>
-                <p class="about-text"><strong>Associates in Arts in Humanities</strong> (2022-2025)<br>Cañada College</p>
+                <div class="education-item">
+                    <p class="about-text"><strong>Bachelor of Design</strong> (Expected May 2027)<br>
+                    University of California, Davis<br>
+                    <em>Sep 2025 – May 2027</em></p>
+                </div>
+                <div class="education-item">
+                    <p class="about-text"><strong>Associate of Arts in Humanities/Humanistic Studies</strong><br>
+                    Cañada College<br>
+                    <em>Aug 2022 – May 2025</em></p>
+                </div>
 
                 <h3 class="subsection-title">Currently</h3>
-                <p class="about-text">I'm actively seeking internship opportunities in product design and UI/UX where I can apply my skills in strategic thinking, visual design, and user-centered problem solving. I'm particularly interested in roles that allow me to work on meaningful projects with cross-functional teams.</p>
+                <p class="about-text">I'm actively seeking internship opportunities in UI/UX and product design where I can apply my skills in strategic thinking, visual design, and user-centered problem solving. I'm particularly interested in roles that allow me to work on meaningful projects with cross-functional teams.</p>
 
                 <div class="cta-section">
                     <h3 class="subsection-title">Let's Connect</h3>
@@ -286,7 +263,7 @@
             <div class="footer-content">
                 <div class="footer-left">
                     <p class="footer-brand">Christopher Sagehorn</p>
-                    <p class="footer-tagline">Product Design Student • UC Davis</p>
+                    <p class="footer-tagline">UI/UX & UI/UX & Product Design Student • UC Davis</p>
                     <p class="footer-location">Redwood City, CA</p>
                 </div>
                 <div class="footer-center">
@@ -300,9 +277,12 @@
                 <div class="footer-right">
                     <div class="footer-social">
                         <a href="https://www.linkedin.com/in/christopher-sagehorn-1b8bb12a7/" target="_blank" class="social-link">LinkedIn</a>
-                        <a href="/cdn-cgi/l/email-protection#9efdedfff9fbafaea6def9f3fff7f2b0fdf1f3" class="social-link">Email</a>
+                        <a href="mailto:csage108@gmail.com" class="social-link">Email</a>
                     </div>
                     <p class="footer-copyright">© 2025 Christopher Sagehorn. All rights reserved.</p>
                 </div>
             </div>
-    
+        </div>
+    </footer>
+</body>
+</html>
